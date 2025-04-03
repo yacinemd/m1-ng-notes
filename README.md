@@ -241,6 +241,6 @@ Enfin, ajoutez un bouton de validation et ajoutez le gestionnaire d'événements
 Il nous reste à ajouter un bouton d'annulation. Pour cela, ajoutez un simple bouton dans votre formulaire sur lequel vous allez ajouter un gestionnaire d'événement click, qui, via une fonction TS de votre cru, changera la propriété `editing` à `null`.
 Maintenant, ajoutez un gestionnaire d'événement `dblclick` sur vos étiquettes pour qu'au double click sur une étiquette, le formulaire d'édition s'ouvre.
 
-> [!Success]
+> [!Important]
 > Félicitations, vous avez géré la partie Tags de votre application !
 > A vous maintenant de réaliser les autres parties de votre application de Notes !
