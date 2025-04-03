@@ -215,4 +215,32 @@ Basez-vous sur le travail déjà réalisé dans `dialogAddTag()` pour cela.
 
 ### Création et modification
 
-De même, nous allons créer un formulaire afin de créer et modifier aisément des étiquettes. Ce formulaire ne s'affichera que lorsqu'on souhaitera ajouter une nouvelle étiquette
+De même, nous allons créer un formulaire afin de créer et modifier aisément des étiquettes.
+Ce formulaire ne s'affichera que lorsqu'on souhaitera ajouter une nouvelle étiquette ou modifier une étiquette existante.
+Pour cela, ajoutez une propriété `editing` de type `Tag` facultative dans votre composant `TagsComponent`
+
+> [!Tip]
+> Pour rappel, vous pouvez explicitement autoriser null dans une propriété, en utilisant l'union de types, comme suit :
+> ```ts
+> color:Color|null = null;
+> ```
+
+Ajoutez dans votre HTML un lien avant et après la liste des étiquettes existantes, permettant, au clic, de modifier `editing` avec un `Tag` "vide" (en initialisant quelque chose comme `{'id': 0, 'name': '', 'color': ''}`). Vous devrez donc créer une méthode et un gestionnaire d'événement adéquats.
+Ajoutez, dans votre HTML, un formulaire `<form>` ne s'affichant que si `editing` n'est pas null. Ce formulaire aura deux champs : un champ texte "name" et un champ couleur "color".
+Sur chaque champ de votre formulaire, vous allez utiliser le two-way binding grâce à `ngModel` :
+```html
+    <input type="number" name="r" min="0" max="255" [(ngModel)]="color.r" />
+    <input type="number" name="g" min="0" max="255" [(ngModel)]="color.g" />
+    <input type="number" name="b" min="0" max="255" [(ngModel)]="color.b" />
+```
+
+> [!Note]
+> ngModel est une propriété définie dans le module `FormsModule`.
+
+Enfin, ajoutez un bouton de validation et ajoutez le gestionnaire d'événements sur le formulaire pour que, lorsqu'il est `submit`, l'étiquette est soit créé (si la valeur ID est nulle) ou modifiée (si la valeur ID est non-nulle).
+Il nous reste à ajouter un bouton d'annulation. Pour cela, ajoutez un simple bouton dans votre formulaire sur lequel vous allez ajouter un gestionnaire d'événement click, qui, via une fonction TS de votre cru, changera la propriété `editing` à `null`.
+Maintenant, ajoutez un gestionnaire d'événement `dblclick` sur vos étiquettes pour qu'au double click sur une étiquette, le formulaire d'édition s'ouvre.
+
+> [!Success]
+> Félicitations, vous avez géré la partie Tags de votre application !
+> A vous maintenant de réaliser les autres parties de votre application de Notes !
