@@ -12,7 +12,7 @@ Créez un nouveau projet angular via `ng new <project>` en remplaçant `<project
 Une fois votre projet créé, ouvrez-le dans votre IDE favori.
 Démarrez le projet via un `npm start` **__dans le dossier de votre application angular__**.
 Angular va lancer le transpilage et va lancer un serveur nodejs.
-Vous pouvez alors consulter votre application via [http://localhost:4200/].
+Vous pouvez alors consulter votre application via [http://localhost:4200/](http://localhost:4200/).
 
 ## Modification basique
 
@@ -87,7 +87,7 @@ Nous allons maintenant indiquer le "slot" dans lequel l'application va charger e
 Pour cela, dans votre fichier `app.component.html`, ajoutez la balise `router-outlet` de la manière suivante, dans votre main : `<router-outlet></router-outlet>`.
 
 > [!Note]
-> Une erreur apparaît, indiquant que "routeur-outlet est inconnu. C'est normal, et traité dans le paragraphe suivant.
+> Une erreur apparaît, indiquant que "routeur-outlet" est inconnu. C'est normal, et traité dans le paragraphe suivant.
 
 ### Dépendance
 Dans `app.component.ts` nous avons maintenant besoin d'indiquer au template qu'il utilise le module de routage, afin de l'informer de l'existence de la balise `router-outlet`.
