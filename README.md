@@ -80,7 +80,12 @@ Pour cela, utilisez la commande `ng g c Tags`, qui vous génère les quatre fich
 ### Ajout de la route
 La liste des routes est indiquée dans le fichier `app.routes.ts`. Une route est constituée de plusieurs éléments, mais la façon la plus simple de définir une route est d'indiquer un chemin et le composant correspondant.
 Un exemple serait le suivant : `{path:'', component: NotesComponent}` pour ajouter l'information de l'usage du composant NotesComponent lorsque la route est "" (donc vide, donc par défaut).
-Ajoutez la route `/tags` liée au composant `TagsComponent`.
+Ajoutez la route `/tags` (sans le `/` dans votre code !) liée au composant `TagsComponent`.
+
+> [!Warning]
+> Certaines versions d'angular peuvent afficher une erreur si aucune route par défaut (path vide) n'est définie.
+> Ajoutez une route "vide" (path valant une chaîne vide) qui, pour le moment, pointera vers le composant `TagsComponent`.
+> Cette route sera évidemment changée par votre humble personne quand vous ajouterez les autres composants de votre application.
 
 ### Injection du composant routé
 Nous allons maintenant indiquer le "slot" dans lequel l'application va charger et afficher le résultat de la route en cours.
