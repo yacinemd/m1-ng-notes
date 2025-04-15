@@ -1,0 +1,29 @@
+/* Style général pour chaque tag */
+div {
+    display: inline-block;
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 25px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    margin: 5px; /* Espacement externe entre les tags */
+    font-family: Arial, Helvetica, sans-serif; /* Police cohérente */
+    font-size: 0.9rem; /* Taille de police */
+    color: #333; /* Couleur du texte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s; /* Transitions pour les interactions */
+    cursor: pointer; /* Curseur pointeur pour indiquer l'interactivité */
+}
+
+/* Effet au survol */
+div:hover {
+    background-color: #f0f0f0; /* Couleur de fond légèrement plus foncée */
+    border-color: #ccc; /* Bordure plus visible */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+/* Style pour le texte à l'intérieur du tag */
+div p {
+    margin: 0; /* Supprime les marges par défaut */
+    text-align: center; /* Centre le texte */
+    font-weight: bold; /* Texte en gras */
+}

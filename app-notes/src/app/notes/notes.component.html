@@ -1,0 +1,89 @@
+<!-- Formulaire d'édition -->
+@if (editing) {
+  <form (ngSubmit)="EditingNote()">
+    <label>
+      Titre :
+      <input type="text" name="title" [(ngModel)]="editing.title" required />
+    </label>
+
+    <label>
+      Contenu :
+      <textarea name="content" [(ngModel)]="editing.content" rows="4"></textarea>
+    </label>
+
+    <!-- Tags -->
+    <div>
+      <label>Tags :</label>
+      <div *ngFor="let tag of editing.tags; let idx = index">
+        <span>{{ tag.name }}</span>
+        <button type="button" (click)="removeTagFromNote(idx)">Supprimer</button>
+      </div>
+      <select [(ngModel)]="selectedTagId">
+        <option [value]="null" disabled selected>Choisir un tag</option>
+        <option *ngFor="let tag of availableTags" [value]="tag.id">{{ tag.name }}</option>
+      </select>
+      <button type="button" (click)="addTagToNote()">Ajouter un tag</button>
+    </div>
+
+    <button type="submit">Valider</button>
+    <button type="button" (click)="cancelEdit()">Annuler</button>
+  </form>
+}
+
+<!-- Liste des notes -->
+<ul>
+  @for (note of notes; track $index) {
+    <li>
+      <app-note 
+        [id]="note.id"
+        [title]="note.title"
+        [content]="note.content">
+      </app-note>
+
+      <div class="note-actions">
+        <button (click)="editNote(note)">Modifier</button>
+        <button (click)="deleteNote(note)">Supprimer</button>
+      </div>
+    </li>
+  } @empty {
+    <li>Aucune note disponible</li>
+  }
+</ul>
+
+<!-- Lien d'ajout -->
+<button (click)="dialogAddNote()">Ajouter une nouvelle Note</button>
+
+<!-- Formulaire de création -->
+@if (creating) {
+  <div class="dialog">
+    <h2>Ajouter une nouvelle Note</h2>
+    <form (ngSubmit)="submitNote(creating)">
+      <label>
+        Titre :
+        <input type="text" name="title" [(ngModel)]="creating.title" required />
+      </label>
+
+      <label>
+        Contenu :
+        <textarea name="content" [(ngModel)]="creating.content" rows="4"></textarea>
+      </label>
+
+      <!-- Tags -->
+      <div>
+        <label>Tags :</label>
+        <div *ngFor="let tag of creating.tags; let idx = index">
+          <span>{{ tag.name }}</span>
+          <button type="button" (click)="removeTagFromNote(idx)">Supprimer</button>
+        </div>
+        <select [(ngModel)]="selectedTagId">
+          <option [value]="null" disabled selected>Choisir un tag</option>
+          <option *ngFor="let tag of availableTags" [value]="tag.id">{{ tag.name }}</option>
+        </select>
+        <button type="button" (click)="addTagToNote()">Ajouter un tag</button>
+      </div>
+
+      <button type="submit">Valider</button>
+      <button type="button" (click)="cancelEdit()">Annuler</button>
+    </form>
+  </div>
+}
