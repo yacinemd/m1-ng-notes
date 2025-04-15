@@ -1,0 +1,31 @@
+/* Style général pour la note */
+.note {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Effet au survol */
+.note:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour le titre de la note */
+.note h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style pour le contenu de la note */
+.note p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}

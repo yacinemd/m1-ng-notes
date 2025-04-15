@@ -1,29 +1,37 @@
 /* Style général pour chaque tag */
-div {
+.tag {
     display: inline-block;
-    background-color: #f9f9f9; /* Couleur de fond douce */
-    border: 1px solid #ddd; /* Bordure légère */
-    border-radius: 25px; /* Coins arrondis */
-    padding: 10px 20px; /* Espacement interne */
-    margin: 5px; /* Espacement externe entre les tags */
-    font-family: Arial, Helvetica, sans-serif; /* Police cohérente */
-    font-size: 0.9rem; /* Taille de police */
-    color: #333; /* Couleur du texte */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: background-color 0.3s, border-color 0.3s, transform 0.2s; /* Transitions pour les interactions */
-    cursor: pointer; /* Curseur pointeur pour indiquer l'interactivité */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-family: 'Arial', Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
 /* Effet au survol */
-div:hover {
-    background-color: #f0f0f0; /* Couleur de fond légèrement plus foncée */
-    border-color: #ccc; /* Bordure plus visible */
-    transform: translateY(-2px); /* Légère élévation */
+.tag:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+    transform: translateY(-3px);
 }
 
 /* Style pour le texte à l'intérieur du tag */
-div p {
-    margin: 0; /* Supprime les marges par défaut */
-    text-align: center; /* Centre le texte */
-    font-weight: bold; /* Texte en gras */
+.tag p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Style pour les tags supprimés (optionnel) */
+.tag.deleted {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
 }

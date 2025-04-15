@@ -64,7 +64,6 @@ export class NotesComponent {
   }
 
   editNote(note: Note): void {
-    // Clone profond si tu veux éviter de modifier directement la note dans le tableau
     this.editing = JSON.parse(JSON.stringify(note));
   }
 
