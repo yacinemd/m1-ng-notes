@@ -16,7 +16,10 @@
 
 <ul>
   @for(tag of tags; track $index){
-      <li><app-tag [id]="tag.id" [name]="tag.name" [color]="tag.color"></app-tag></li>
+      <li><app-tag [id]="tag.id" 
+        [name]="tag.name" 
+        [color]="tag.color">
+      </app-tag></li>
       <div class="tag-actions">
           <button (click)="editTag(tag)">Modifier</button>
           <button (click)="deleteTag(tag)">Supprimer</button>

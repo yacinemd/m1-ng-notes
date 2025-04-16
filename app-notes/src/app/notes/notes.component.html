@@ -36,6 +36,8 @@
     <li>
       <app-note 
         [id]="note.id"
+        [color] = "note.color"
+        [created]="note.created"
         [title]="note.title"
         [content]="note.content">
       </app-note>
@@ -66,6 +68,14 @@
       <label>
         Contenu :
         <textarea name="content" [(ngModel)]="creating.content" rows="4"></textarea>
+      </label>
+      <label>
+        Couleur :
+        <input type="color" name="color" [(ngModel)]="creating.color" />
+      </label>
+      <label>
+        Date de création :
+        <input type="date" name="created" [(ngModel)]="creating.created" />
       </label>
 
       <!-- Tags -->

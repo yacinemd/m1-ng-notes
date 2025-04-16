@@ -38,6 +38,8 @@ export class NotesComponent {
     this.creating = {
       id: Date.now(),
       title: '',
+      color: '#888888',
+      created: new Date(),
       content: '',
       tags: []
     };
