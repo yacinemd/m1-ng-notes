@@ -1,5 +1,13 @@
 <div class="note">
-    <h3>{{ title }}</h3>
-    <p>{{ content }}</p>
+  <h3 [style.color]="color">{{ title }}</h3>
+  <p>{{ content }}</p>
+  <div class="tags">
+    @for (tag of tags; track tag.id) {
+      <span class="tag" [style.backgroundColor]="tag.color">
+        {{ tag.name }}
+      </span>
+    }
   </div>
   
+  <small>{{ created }}</small>
+</div>

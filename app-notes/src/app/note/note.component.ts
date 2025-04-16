@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Tag } from '../tag';
 
 @Component({
   selector: 'app-note',
@@ -14,4 +15,5 @@ export class NoteComponent {
   @Input() public created: Date = new Date();
   @Input() public title: string = "Default Note";
   @Input() public content: string = "Default Content";
+  @Input() public tags: String[] = [];
 }
